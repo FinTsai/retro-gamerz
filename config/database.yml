@@ -19,4 +19,4 @@ test:
 
 production:
   <<: *default
-  database: my_database_production
+  database: game_store_proto_production
