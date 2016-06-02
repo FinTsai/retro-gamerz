@@ -28,27 +28,33 @@
             <i class="glyphicon glyphicon-heart"></i>
             Games
           </a>
-
         </div>
-
-        <form class="form-inline pull-xs-right">
-          <input class="form-control" type="text" placeholder="Search">
-          <button class="btn btn-success-outline" type="submit">Search</button>
-        </form>
 
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="/#cart">Cart</a>
+              <a href="/#cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a>
             </li>
             <li>
-              <a href="/#login">Login</a>
+              <% if current_user %>
+                <a href="/#login"><%= current_user.email %></a>
+              <% end %>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <%= yield %>
+
+    <form class="form-inline container">
+      <input class="form-control" type="text" placeholder="Search">
+      <input class="form-control" type="text" placeholder="Location (e.g. Sydney)">
+      <button class="btn btn-success-outline" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </form>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>
