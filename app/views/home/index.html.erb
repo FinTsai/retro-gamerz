@@ -4,7 +4,9 @@
   <% @games.each do |game| %>
     <div class="col-md-4 padding-10">
       <% if game.image? %>
-        <%= image_tag(game.image, size: "150x150", :alt => game.name) %>
+        <%= image_tag(game.image, size: "200x200", :alt => game.name) %>
+        <% else %>
+          <%= image_tag('no-image-available.jpeg', size: "200x200", :alt => game.name) %>
       <% end %>
       <h3><%= game.name %></h3>
       <p>$<%= game.price %></p>

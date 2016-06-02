@@ -1,24 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<% if @game.image? %>
-  <%= image_tag(@game.image, size: "150x150", :alt => @game.name) %>
-<% end %>
-
-<p>
-  <strong>Name:</strong>
-  <%= @game.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @game.price %>
-</p>
-
-<p>
-  <strong>Available:</strong>
-  <%= @game.available %>
-</p>
-
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<div class="container">
+  <div class="col-md-4">
+    <% if @game.image? %>
+      <%= image_tag(@game.image, size: "300x300", :alt => @game.name) %>
+    <% else %>
+      <%= image_tag('no-image-available.jpeg', size: "300x300", :alt => @game.name) %>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <h2><%= @game.name %></h2>
+    <p>
+      <strong>Item Condition:</strong>
+      New
+    </p>
+    <p>
+      <strong>Quantity:</strong>
+      <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </p>
+    <p>
+      <strong>Price:</strong>
+      $<%= @game.price %>
+    </p>
+    <p>
+      <strong>Payments:</strong>
+      Credit Card, PayPal, Cash
+    </p>
+    <p>
+      <strong>Status: </strong>
+      <% if @game.available? %>
+        <span>In Stock</span>
+      <% else %>
+        <span class="out-of-stock">Out of Stock</span>
+      <% end %>
+    </p>
+    <p>
+      <a href="/">
+        <i class="glyphicon glyphicon-heart"></i>
+        Wishlist
+      </a>
+    </p>
+    <div>
+      <%= link_to "Buy", "/", :id=> "buy", :class => "btn btn-primary", :disabled => !@game.available %>
+      <%= link_to "Rent", "/", :id=> "rent", :class => "btn btn-default", :disabled => !@game.available %>
+    </div>
+  </div>
+</div>
