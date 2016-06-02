@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <title>GameStore</title>
@@ -14,41 +14,41 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container padding-top-bottom-10">
-            <div class="navbar-header">
-              <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+      <div class="container padding-top-bottom-10">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
 
-              <a class="navbar-brand" href="/">
-                <i class="glyphicon glyphicon-heart"></i>
-                Games</a>
+          <a class="navbar-brand" href="/">
+            <i class="glyphicon glyphicon-heart"></i>
+            Games
+          </a>
 
-              </div>
+        </div>
 
-            <form class="form-inline pull-xs-right">
-              <input class="form-control" type="text" placeholder="Search">
-              <button class="btn btn-success-outline" type="submit">Search</button>
-            </form>
+        <form class="form-inline pull-xs-right">
+          <input class="form-control" type="text" placeholder="Search">
+          <button class="btn btn-success-outline" type="submit">Search</button>
+        </form>
 
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/#cart">Cart</a>
+            </li>
+            <li>
+              <a href="/#login">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li>
-                  <a href="/#cart">Cart</a>
-                </li>
-                <li>
-                  <a href="/#login">Login</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
-        <div id="main">
     <%= yield %>
   </body>
 </html>
