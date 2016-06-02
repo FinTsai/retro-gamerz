@@ -4,8 +4,10 @@ one:
   name: MyString
   price: 9.99
   available: false
+  image: MyString
 
 two:
   name: MyString
   price: 9.99
   available: false
+  image: MyString

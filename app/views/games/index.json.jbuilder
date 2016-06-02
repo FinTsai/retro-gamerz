@@ -1,4 +1,4 @@
 json.array!(@games) do |game|
-  json.extract! game, :id, :name, :price, :available
+  json.extract! game, :id, :name, :price, :available, :image
   json.url game_url(game, format: :json)
 end

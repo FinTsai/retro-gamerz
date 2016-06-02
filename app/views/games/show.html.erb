@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% if @game.image? %>
+  <%= image_tag(@game.image, size: "150x150", :alt => @game.name) %>
+<% end %>
+
 <p>
   <strong>Name:</strong>
   <%= @game.name %>
@@ -14,6 +18,7 @@
   <strong>Available:</strong>
   <%= @game.available %>
 </p>
+
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>

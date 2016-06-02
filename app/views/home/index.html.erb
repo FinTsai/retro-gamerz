@@ -1,16 +1,14 @@
-<h1>Retro Video Game</h1>
-<p></p>
-
-<%= image_tag("Retro Game Wallpaper1.jpg", size: "800x400", :alt => "Retro Game") %>
-<br></br>
-
 <div class="container">
+  <h2>Games on Sale</h2>
+
   <% @games.each do |game| %>
-    <div class="col-md-4">
-      <%= image_tag("Super_Mario_64_DS_Coverart.png", size: "100x100", :alt => game.name) %>
-      <%= game.name %>
-      <%= game.price %>
-      <%= link_to 'Show', game %>
+    <div class="col-md-4 padding-10">
+      <% if game.image? %>
+        <%= image_tag(game.image, size: "150x150", :alt => game.name) %>
+      <% end %>
+      <h3><%= game.name %></h3>
+      <p>$<%= game.price %></p>
+      <p><%= link_to 'Show', game %></p>
     </div>
   <% end %>
 </div>
