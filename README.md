@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Term 2 assignment at Coder Factory for group:
+* Arun
+* Arunava
+* Beston
+* Fin
 
-Things you may want to cover:
+## Problem Statement:
+A buyer looking to buy or rent retro video games to relive their childhood or add to their collection that doesn’t want to use either gumtree or eBay to do an extensive search and on the other hand the sellers doesn’t want to pay fees and looking to post their products in the most suitable outlet.
 
-* Ruby version
+## Resolution:
+To create some sort of product where it makes it easier for buyers and sellers to collaborate with each other to facilitate a comfortable environment to buy or rent retro video games.  
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Solution:
+ We will only take 5% of the share so the seller can be able to offer more fare prices to potential buyers. Our main search criteria would be based on budget and availability of items
