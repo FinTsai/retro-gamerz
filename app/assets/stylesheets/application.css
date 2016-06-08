@@ -26,10 +26,14 @@ footer ul {
 }
 
 .social-link > a {
-  font-size: 30px;
+  font-size: 23px;
   color: #b2b2b2;
 }
 
 .padding-right-10 {
   padding-right: 10px;
+}
+
+h2 {
+  color: #666;
 }

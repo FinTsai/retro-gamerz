@@ -24,76 +24,100 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a class="navbar-brand" href="/">
-            <i class="glyphicon glyphicon-heart"></i>
-            Games
-          </a>
-        </div>
-
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="/#cart">
-                <span class="glyphicon glyphicon-shopping-cart"></span>
-                Cart</a>
-            </li>
-            <li>
-              <% if current_user %>
-              <a href="/#login"><%= current_user.email %></a>
-              <% end %>
-            </li>
-          </ul>
-        </div>
+            <a class="navbar-brand" href="/">
+                <i class="glyphicon glyphicon-heart"></i>
+                Games
+              </a>
       </div>
-    </nav>
 
-    <form class="form-inline container">
-      <input class="form-control" type="text" placeholder="Search">
-      <input class="form-control" type="text" placeholder="Location (e.g. Sydney)">
-      <button class="btn btn-success-outline" type="submit">
-        <i class="glyphicon glyphicon-search"></i>
-      </button>
-    </form>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/#cart">
+              <span class="glyphicon glyphicon-shopping-cart"></span>
+              Cart</a>
+          </li>
+          <% if user_signed_in? %>
+          <li class="dropdown">
 
-    <div class="container">
-      <%= yield %>
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %>
+              <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+              </li>
+              <li>
+                <a>Another action</a>
+              </li>
+              <li>
+                <a>Something else here</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a>Separated link</a>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to('Login', new_user_session_path)  %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <footer>
-      <div class="container">
-        <div class="col-md-3">
-          <h5>About</h5>
-          <p>
-            Retro Gamerz is a platform for trading video games.
-          </p>
-        </div>
+  <form class="form-inline container">
+    <input class="form-control" type="text" placeholder="Search">
+    <input class="form-control" type="text" placeholder="Location (e.g. Sydney)">
+    <button class="btn btn-success-outline" type="submit">
+      <i class="glyphicon glyphicon-search"></i>
+    </button>
+  </form>
 
-        <div class="col-md-3">
-          <h5>Contact Us</h5>
-          <ul>
-            <li>Email: support@game.com</li>
-            <li>Phone number: 0xxxxxx32</li>
-          </ul>
-        </div>
+  <div class="container">
+    <%= yield %>
+  </div>
 
-        <div class="col-md-3">
-          <h5>Legal</h5>
-          <ul>
-            <li>Privacy Policy</li>
-            <li>Terms of Use</li>
-            <li>Posting Policy</li>
-          </ul>
-        </div>
-
-        <div class="col-md-3 social-link">
-          <h5>Social</h5>
-          <a href="#" class="genericon genericon-facebook padding-right-10"></a>
-          <a href="#" class="genericon genericon-instagram padding-right-10"></a>
-          <a href="https://www.youtube.com/" target="_blank" class="genericon genericon-youtube padding-right-10"></a>
-          <a href="https://twitter.com/" target="_blank" class="genericon genericon-twitter padding-right-10"></a>
-        </div>
+  <footer>
+    <div class="container">
+      <div class="col-sm-3">
+        <h5>About</h5>
+        <p>
+          Retro Gamerz is a platform for trading video games.
+        </p>
       </div>
-    </footer>
 
-  </body>
+      <div class="col-sm-3">
+        <h5>Contact Us</h5>
+        <ul>
+          <li>Email: support@game.com</li>
+          <li>Phone number: 0xxxxxx32</li>
+        </ul>
+      </div>
+
+      <div class="col-sm-3">
+        <h5>Legal</h5>
+        <ul>
+          <li>Privacy Policy</li>
+          <li>Terms of Use</li>
+          <li>Posting Policy</li>
+        </ul>
+      </div>
+
+      <div class="col-sm-3 social-link">
+        <h5>Social</h5>
+        <a href="#" class="genericon genericon-facebook padding-right-10"></a>
+        <a href="#" class="genericon genericon-instagram padding-right-10"></a>
+        <a href="https://www.youtube.com/" target="_blank" class="genericon genericon-youtube padding-right-10"></a>
+        <a href="https://twitter.com/" target="_blank" class="genericon genericon-twitter padding-right-10"></a>
+      </div>
+    </div>
+  </footer>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
 </html>
