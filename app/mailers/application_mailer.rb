@@ -1,4 +1,4 @@
-class ApplicationMailer < ActionMailer::Base
+ %c lass ApplicationMailer < ActionMailer::Base
   default from: 'from@example.com'
   layout 'mailer'
 end

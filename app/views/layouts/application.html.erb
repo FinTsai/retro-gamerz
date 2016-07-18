@@ -28,7 +28,19 @@
                 <i class="glyphicon glyphicon-heart"></i>
                 Games
               </a>
-      </div>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gategories <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a>Xbox</a></li>
+                    <li><a>Wii</a></li>
+                    <li><a>Sega</a></li>
+                    <li><a>PS4</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -48,15 +60,9 @@
               <li>
                 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
               </li>
-              <li>
-                <a>Another action</a>
-              </li>
-              <li>
-                <a>Something else here</a>
-              </li>
               <li role="separator" class="divider"></li>
               <li>
-                <a>Separated link</a>
+                <a>Settings</a>
               </li>
             </ul>
           </li>
@@ -68,6 +74,8 @@
         </ul>
       </div>
     </div>
+  </div>
+
   </nav>
 
   <form class="form-inline container">
